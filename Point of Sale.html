@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://prestashopdemo.webkul.com:8098/en/module/wkpos/sale -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+      
+
+  
+
+
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+
+  <title>Point of Sale </title>
+  <meta name="description" content="POS Sale, Create order through Point of sale module">
+  <meta name="keywords" content="">
+
+      
+                  <link rel="alternate" href="https://prestashopdemo.webkul.com:8098/en/module/wkpos/sale" hreflang="en-us">
+                  <link rel="alternate" href="https://prestashopdemo.webkul.com:8098/ta/module/wkpos/sale" hreflang="ta-in">
+                  <link rel="alternate" href="https://prestashopdemo.webkul.com:8098/br/module/wkpos/sale" hreflang="pt-br">
+                  <link rel="alternate" href="https://prestashopdemo.webkul.com:8098/fr/module/wkpos/sale" hreflang="fr-fr">
+                  <link rel="alternate" href="https://prestashopdemo.webkul.com:8098/ms/module/wkpos/sale" hreflang="ms-my">
+        
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  <link rel="icon" type="image" href="https://prestashopdemo.webkul.com:8098/modules//wkpos/logo.png">
+  
+
+
+              <link rel="stylesheet" href="./Point of Sale_files/bootstrap.min.css" type="text/css">
+            <link rel="stylesheet" href="./Point of Sale_files/custom.css" type="text/css">
+            <link rel="stylesheet" href="./Point of Sale_files/jquery.growl.css" type="text/css">
+            <link rel="stylesheet" href="./Point of Sale_files/css" type="text/css">
+            <link rel="stylesheet" href="./Point of Sale_files/font-awesome.min.css" type="text/css">
+            <link rel="stylesheet" href="./Point of Sale_files/jquery-ui.css" type="text/css">
+    
+
+
+
+                      <script type="text/javascript" src="./Point of Sale_files/jquery-1.11.0.min.js.download"></script>
+            <script type="text/javascript" src="./Point of Sale_files/bootstrap.min.js.download"></script>
+            <script type="text/javascript" src="./Point of Sale_files/jquery-migrate-1.2.1.min.js.download"></script>
+            <script type="text/javascript" src="./Point of Sale_files/jquery-ui.js.download"></script>
+            <script type="text/javascript" src="./Point of Sale_files/cldr.bundle.js.download"></script>
+            <script type="text/javascript" src="./Point of Sale_files/JsBarcode.min.js.download"></script>
+            <script type="text/javascript" src="./Point of Sale_files/rsvp-3.1.0.min.js.download"></script>
+            <script type="text/javascript" src="./Point of Sale_files/sha-256.min.js.download"></script>
+            <script type="text/javascript" src="./Point of Sale_files/qz-tray.js.download"></script>
+            <script type="text/javascript" src="./Point of Sale_files/validate.js.download"></script>
+            <script type="text/javascript" src="./Point of Sale_files/tools.js.download"></script>
+            <script type="text/javascript" src="./Point of Sale_files/jquery.growl.js.download"></script>
+            <script type="text/javascript" src="./Point of Sale_files/knockout.js.download"></script>
+            <script type="text/javascript" src="./Point of Sale_files/knockout.mapping-latest.js.download"></script>
+            <script type="text/javascript" src="./Point of Sale_files/bundle.js.download"></script>
+    
+    <script>
+                    var posSales = "https:\/\/prestashopdemo.webkul.com:8098\/en\/module\/wkpos\/sale";
+                    var allowOOSConfig = "0";
+                    var psVersion = "1.7.5.0";
+                    var langIsoCode = "en";
+                    var posController = "sale";
+                    var idEmployee = "1";
+                    var orderUrl = "https:\/\/prestashopdemo.webkul.com:8098\/en\/module\/wkpos\/order";
+                    var productSearchMethods = "1,2";
+                    var defaultPaymentMethod = "Cash";
+                    var defaultIdPaymentMethod = "1";
+                    var wkposLogin = "https:\/\/prestashopdemo.webkul.com:8098\/en\/module\/wkpos\/login";
+                    var currencySign = "$";
+                    var currencyBlank = 1;
+                    var currencyFormat = "\u00a4#,##0.00";
+                    var priceDisplayPrecision = 2;
+                    var employeeName = "Jack Smith";
+                    var shopName = "Demo";
+                    var validateSession = false;
+                    var contactDetails = "1234567890";
+                    var displayProductDiscount = "1";
+                    var displayOrderDiscount = "1";
+                    var displayBarcode = "1";
+                    var openCashDrawer = "1";
+                    var selectedPrinterName = "";
+                    var barcodeType = "5";
+                    var changePriceType = "1";
+                    var removePosProduct = false;
+                    var idWkPosOutlet = "1";
+                    var outletCity = "Noida";
+                    var outletAddress1 = "Sector - 63";
+                    var outletAddress2 = "";
+                    var outletPostCode = "201301";
+                    var idOutletAddress = "10";
+                    var defaultGroup = "4";
+                    var defaultGroupAccess = [4,3];
+                    var guestAccountEnabled = false;
+                    var shippingEnabled = false;
+                    var posToken = "3e8623771e67c96d022021ac49b1a57f";
+                    var psPrecision = "2";
+                    var psRoundType = "2";
+                    var posSessionStatus = 0;
+                    var controlSession = 0;
+                    var loadingPosProduct = "Loading Products";
+                    var qzTrayLoadError = "Please run the QZ tray application in background or allow the request to process";
+                    var printerConnectedSuccess = "Printer Connected Successfully";
+                    var printerDisconnectSuccess = "Printer disconnected successfully";
+                    var orderSyncBeforeClose = "Before session close please synchronize the offline orders first.";
+                    var errorPosProduct = "Could not load Products";
+                    var loadingPosCategory = "Loading Category";
+                    var errorPosCategory = "Could not load Category";
+                    var loadingPosOrders = "Loading Orders";
+                    var errorPosOrders = "Could not load Load Orders";
+                    var loadingPosCustomers = "Loading Customers";
+                    var errorPosCustomers = "Could not load Customers";
+                    var customerName = "Customer";
+                    var addCustomerHeading = "Add Customer";
+                    var editCustomerHeading = "Edit Customer";
+                    var deliveryAddressError = "The delivery address country is not active.";
+                    var wkProductNotAvailable = "Product not available for order";
+                    var wkQuantityNotifi = "Product does not have enough quantity";
+                    var displaySubTotal = "Subtotal : ";
+                    var displayTax = "Tax : ";
+                    var displayDiscount = "Discount : ";
+                    var displayTotal = "Total : ";
+                    var displayCustomerName = "Customer Name : ";
+                    var displayPhone = "Phone : ";
+                    var displayUser = "Cashier : ";
+                    var displayOrder = "Order : ";
+                    var displayShippingMsg = "Shipping Cost : ";
+                    var invalidOrderDiscount = "Invalid Order discount";
+                    var beforeDiscountMessage = "With a ";
+                    var afterDiscountMessage = "% Discount";
+                    var networkError = "No Internet Connection";
+                    var invalidAddress1 = "Invalid Address1";
+                    var invalidAddress2 = "Invalid Address2";
+                    var invalidPostCode = "Invalid Post";
+                    var invalidCityName = "Invalid City Name";
+                    var invalidPhone = "Invalid Phone Number";
+                    var invalidHomePhone = "Invalid Home phone number";
+                    var invalidFirstName = "Invalid first Name";
+                    var invalidLastName = "Invalid Last Name";
+                    var invalidCompanyName = "Invalid Company Name";
+                    var invalidAliasName = "Invalid Alias name";
+                    var invalidEmail = "Invalid Email Address";
+                    var invalidPasswd = "Invalid Password";
+                    var noCarrier = "No Carrier Applied";
+                    var noAddressSelectedError = "Please select address";
+                    var negativePriceError = "Product Price should be positive";
+                    var deleteCartMessage = "Are you sure you want to delete the cart?";
+                    var deleteProductMessage = "Are you sure you want to delete the product from cart?";
+                    var deleteOrderProductMessage = "Are you sure you want to delete the product from order?";
+                    var addedToCart = "Product successfully Added to cart";
+                    var productNotExists = "does not exists in the outlet";
+                    var updateQuantityMsg = "Updated the product quantity in cart";
+                    var successRemoveProduct = "Successfully removed product from cart";
+                    var combinationNotExist = "Combination Does Not Exist";
+                    var printerNotConnected = "Printer Not Connected";
+                    var selectCustomerMsg = "Please select the customer";
+                    var orderSyncMsg = "You need to synchronize offline orders to proceed";
+                    var requireAddress1 = "Address1 Required";
+                    var requireZipCode = "Zip\/Post code Required";
+                    var requireCityName = "City Name Required";
+                    var requireCountry = "Country Name Required";
+                    var requireAliasName = "Alias Name Required";
+                    var selectCustomerError = "Please Select Customer. Guest Checkout is disabled";
+                    var minimalQtyError = "You cannot proceed to checkout with ";
+                    var minimalQtyError1 = "Qty of ";
+                    var exitFullScreen = "Exit Full Screen";
+                    var enterFullScreen = "Enter Full Screen";
+                    var removeProductAlert = "Remove the product from cart that are not available in the outlet. This can cause problem during checkout process";
+                    var eitherMsg = "Either";
+                    var productNotFoundAlert = "is disabled or it doesn't exists in the outlet";
+                    var productSuccessRemovedAlert = "Product that are not active or deleted from the outlet are successfully removed";
+                    var sNoHeading = "S.No.";
+                    var productNameHeading = "Product Name";
+                    var qtyHeading = "Qty";
+                    var priceHeading = "Price";
+                    var totalHeading = "Total";
+                    var changeCurrencyMsg = "On changing the currency, the cart product price will not be updated. So, please remove the cart.";
+                    var autoPrinterConnect = false;
+                    var invalidInstallmentAmount = "Invalid Installment Amount";
+                    var overflowInstallmentAmount = "Installment amount shold be less then or equal to order amount";
+                    var installmentPaidAmount = "Paid Amount";
+                    var installmentRemainingAmount = "Remaining Amount";
+                    var paymentAcceptedStatus = "2";
+            </script>
+    <script>
+        var pos_products,
+        customers,
+        orders,
+        pos_cart = {},
+        pos_orders = {},
+        posOrders;
+
+    var qty = 0, update = "qty", activeSidePanel, back;
+    var categoryWiseProducts = {};
+    </script>
+
+
+
+
+  
+
+
+
+    
+  </head>
+
+  <body id="pos-sale" class="lang-en country-us currency-usd layout-full-width page- tax-display-disabled wkpos-scrollbar" style="user-select: none;">
+
+    
+      
+    
+
+    <main>
+      
+      <header id="header">
+        
+          
+
+  <div class="header-banner">
+    
+  </div>
+
+
+
+  <nav class="header-nav">
+    <div class="container-fluid wk-pos" "="" style="display: block;">
+      <div class="row">
+        <div class="col-xs-12">
+            <div class="row" id="wkpos-header">
+              
+                <div class="col-xs-12 col-sm-3 wk-flex-grow">
+                    <span style="font-size: 26px; line-height: 1.9;">Point of Sale</span>
+                </div>
+              
+              
+                <div class="col-xs-4 col-sm-4 pull-right col-md-offset-1 wk-pos-features" id="wkpos-product-search">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                        <input type="text" class="form-control" placeholder="Search Product by Name, Barcode, Product Id" data-bind="event: { keyup: $root.contentModel.searchProduct }, value: $root.contentModel.productSearchKey, valueUpdate: [&#39;afterkeydown&#39;, &#39;input&#39;]">
+                        <span class="input-group-addon"><i class="fa fa-barcode"></i></span>
+                    </div>
+                </div>
+              
+              
+                <!-- ko if: $root.contentModel.emptyOfflineOrders() --><!-- /ko -->
+              
+              
+                <div class="pull-right wk-pos-features" data-bind="click: $root.contentModel.toggleNavigator, attr: { title: $root.navigatorOnline()? &#39;online&#39; : &#39;offline&#39; }" title="online">
+                    <i class="fa fa-wifi wkpos-online-mode" data-bind="css: { &#39;wkpos-online-mode&#39;: $root.navigatorOnline() == true, &#39;wkpos-offline-mode&#39;: $root.navigatorOnline() == false }"></i>
+                </div>
+              
+              
+                <div class="pull-right wk-pos-features">
+                  <!-- ko if: $root.contentModel.printerConnected() --><!-- /ko -->
+                  <!-- ko if: !$root.contentModel.printerConnected() -->
+                    <i class="fa fa-print wk-cursor-pointer wkpos-offline-mode" data-bind="click: $root.contentModel.connectPrinter" aria-hidden="true" title="Connect Printer"></i>
+                  <!-- /ko -->
+                </div>
+              
+              
+                                                      <!-- ko if: $root.navigatorOnline() -->
+                      <div class="language-selector dropdown js-dropdown pull-right wk-pos-features">
+                                                                              <button data-toggle="dropdown" class="btn wkpos-btn btn-unstyle" aria-haspopup="true" aria-expanded="false" aria-label="Language dropdown">
+                              <span class="expand-more">en</span>
+                              <i class="fa fa-angle-down"></i>
+                            </button>
+                                                                                                                                                                                                                                                                                  <ul class="dropdown-menu hidden-sm-down" aria-labelledby="language-selector-label">
+                                                      <li>
+                              <a href="https://prestashopdemo.webkul.com:8098/en/module/wkpos/sale" class="dropdown-item" data-iso-code="en">English (English)</a>
+                            </li>
+                                                      <li>
+                              <a href="https://prestashopdemo.webkul.com:8098/ta/module/wkpos/sale" class="dropdown-item" data-iso-code="en">தமிழ் (Tamil)</a>
+                            </li>
+                                                      <li>
+                              <a href="https://prestashopdemo.webkul.com:8098/br/module/wkpos/sale" class="dropdown-item" data-iso-code="en">Português BR (Portuguese)</a>
+                            </li>
+                                                      <li>
+                              <a href="https://prestashopdemo.webkul.com:8098/fr/module/wkpos/sale" class="dropdown-item" data-iso-code="en">Français (French)</a>
+                            </li>
+                                                      <li>
+                              <a href="https://prestashopdemo.webkul.com:8098/ms/module/wkpos/sale" class="dropdown-item" data-iso-code="en">Bahasa melayu (Malay)</a>
+                            </li>
+                                                  </ul>
+                      </div>
+                    <!-- /ko -->
+                                                
+              
+                <!-- ko if: $root.displayCurrency() -->
+                                                            <div class="language-selector dropdown js-dropdown pull-right wk-pos-features">
+                                                                                                                                                                                                                                                                                      <button data-toggle="dropdown" class="btn wkpos-btn btn-unstyle" aria-haspopup="true" aria-expanded="false" aria-label="Language dropdown">
+                              <span class="expand-more">USD</span>
+                              <i class="fa fa-angle-down"></i>
+                            </button>
+                                                                          <ul class="dropdown-menu hidden-sm-down" aria-labelledby="language-selector-label">
+                                                      <li data-bind="click: $root.changeCurrency.bind($data, &#39;https://prestashopdemo.webkul.com:8098/en/module/wkpos/sale?SubmitCurrency=1&amp;id_currency=3&#39;)">
+                              <a title="Brazilian Real" rel="nofollow" href="https://prestashopdemo.webkul.com:8098/en/module/wkpos/sale?SubmitCurrency=1&amp;id_currency=3" class="dropdown-item">BRL R$</a>
+                            </li>
+                                                      <li data-bind="click: $root.changeCurrency.bind($data, &#39;https://prestashopdemo.webkul.com:8098/en/module/wkpos/sale?SubmitCurrency=1&amp;id_currency=4&#39;)">
+                              <a title="Euro" rel="nofollow" href="https://prestashopdemo.webkul.com:8098/en/module/wkpos/sale?SubmitCurrency=1&amp;id_currency=4" class="dropdown-item">EUR €</a>
+                            </li>
+                                                      <li data-bind="click: $root.changeCurrency.bind($data, &#39;https://prestashopdemo.webkul.com:8098/en/module/wkpos/sale?SubmitCurrency=1&amp;id_currency=2&#39;)">
+                              <a title="Indian Rupee" rel="nofollow" href="https://prestashopdemo.webkul.com:8098/en/module/wkpos/sale?SubmitCurrency=1&amp;id_currency=2" class="dropdown-item">INR ₹</a>
+                            </li>
+                                                      <li data-bind="click: $root.changeCurrency.bind($data, &#39;https://prestashopdemo.webkul.com:8098/en/module/wkpos/sale?SubmitCurrency=1&amp;id_currency=5&#39;)">
+                              <a title="Malaysian Ringgit" rel="nofollow" href="https://prestashopdemo.webkul.com:8098/en/module/wkpos/sale?SubmitCurrency=1&amp;id_currency=5" class="dropdown-item">MYR RM</a>
+                            </li>
+                                                      <li class="current" data-bind="click: $root.changeCurrency.bind($data, &#39;https://prestashopdemo.webkul.com:8098/en/module/wkpos/sale?SubmitCurrency=1&amp;id_currency=1&#39;)">
+                              <a title="US Dollar" rel="nofollow" href="https://prestashopdemo.webkul.com:8098/en/module/wkpos/sale?SubmitCurrency=1&amp;id_currency=1" class="dropdown-item">USD $</a>
+                            </li>
+                                                  </ul>
+                      </div>
+                                                      <!-- /ko -->
+              
+              
+                <div class=" pull-right wk-pos-features font-size-12 wkpos-width-15 wkpos-employee">
+                                            <i class="fa fa-user-circle wk-line-height-0 col-md-2 wk-padding-0 clearfix"></i>
+                                        <div class=" col-md-9 wk-padding-0 wkpos-padding-left-15 hidden-sm wk-d-flex">
+                      <div class="salesperson-name wk-flex-3" data-bind="text: cashierName, attr: { title: cashierName }" title="Jack Smith">Jack Smith</div>
+                                            
+                    </div>
+                </div>
+              
+                <!-- ko if: $root.navigatorOnline() -->
+                  <!-- ko if: $root.sessionStatus() == 1 --><!-- /ko -->
+                <!-- /ko -->
+              
+                <!-- ko ifnot: $root.sessionStatus() == 1 -->
+                  <a href="https://prestashopdemo.webkul.com:8098/en/module/wkpos/login?poslogout=1">
+                      <div class=" pull-right wk-pos-features" title="Sign out">
+                              <i class="fa fa-sign-out"></i>
+                      </div>
+                  </a>
+                <!-- /ko -->
+              
+            </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+        
+      </header>
+
+      
+      <section id="pos-content">
+                  
+          
+    <div class="container text-center wk-loading-pos-details hide">
+        <div class="row">
+            <div class="cp-spinner cp-eclipse"></div>
+            <div class="progress wk-load-pos-product hide">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="color: green; width: 100%;">
+                </div>
+            </div>
+            <div class="wk-loading-status" style="color: rgb(0, 128, 0);">Loading Orders</div>
+        </div>
+    </div>
+
+          <div class="container-fluid wk-pos" "="" style="display: block;">
+            <div class="row wk-d-flex">
+                            
+                
+                  <div id="wk-pos-side-panel" class="col-xs-1" style="height: 618px;">
+                    
+    <div class="col-xs-12" id="left-panel">
+        <wkpos-left-panel params="activeClass: &quot;products&quot; , panelConentHeading: &quot;Home&quot;, icon: &quot;home&quot;"><div class="wksidepanel button-payment wkpos-text-color" id="button-home" data-bind="click: $root.contentModel.onClickSidePanel, css: {&#39;wkpos-text-color&#39;: $root.bodyPanel() == activeClass }, attr: { title: panelConentHeading }" title="Home"><i data-bind="css: iconClass" class="fa fa-home"></i><div class="hidden-sm" data-bind="text: panelConentHeading">Home</div></div></wkpos-left-panel>
+        <wkpos-left-panel params="activeClass: &quot;customers&quot; , panelConentHeading: &quot;Customer&quot;, icon: &quot;user-circle&quot;"><div class="wksidepanel button-payment" id="button-home" data-bind="click: $root.contentModel.onClickSidePanel, css: {&#39;wkpos-text-color&#39;: $root.bodyPanel() == activeClass }, attr: { title: panelConentHeading }" title="Customer"><i data-bind="css: iconClass" class="fa fa-user-circle"></i><div class="hidden-sm" data-bind="text: panelConentHeading">Customer</div></div></wkpos-left-panel>
+                <wkpos-left-panel params="activeClass: &quot;orders&quot;, panelConentHeading: &quot;Order&quot;, icon: &quot;file-text-o&quot;"><div class="wksidepanel button-payment" id="button-home" data-bind="click: $root.contentModel.onClickSidePanel, css: {&#39;wkpos-text-color&#39;: $root.bodyPanel() == activeClass }, attr: { title: panelConentHeading }" title="Order"><i data-bind="css: iconClass" class="fa fa-file-text-o"></i><div class="hidden-sm" data-bind="text: panelConentHeading">Order</div></div></wkpos-left-panel>
+        <wkpos-left-panel params="activeClass: &quot;settings&quot;, panelConentHeading: &quot;Setting&quot;, icon: &quot;cog&quot;"><div class="wksidepanel button-payment" id="button-home" data-bind="click: $root.contentModel.onClickSidePanel, css: {&#39;wkpos-text-color&#39;: $root.bodyPanel() == activeClass }, attr: { title: panelConentHeading }" title="Setting"><i data-bind="css: iconClass" class="fa fa-cog"></i><div class="hidden-sm" data-bind="text: panelConentHeading">Setting</div></div></wkpos-left-panel>
+        
+    </div>
+
+                  </div>
+                
+
+                
+        <!-- ko if: ($root.bodyPanel() == "products" || $root.bodyPanel() == "customers" || $root.bodyPanel() == "shipping") -->
+        <!-- ko if: $root.contentModel.displayCart() == 1 -->
+                    <!-- /ko -->
+    <!-- /ko -->
+    <div id="content-wrapper" class="col-xs-11 col-xs-7 product-panel ui-resizable" data-bind="css: { &#39;col-xs-7 product-panel&#39;: (($root.bodyPanel() == &#39;products&#39; || $root.bodyPanel() == &#39;customers&#39; || $root.bodyPanel() == &#39;shipping&#39;) &amp;&amp; $root.contentModel.displayCart() == 1), &#39;col-xs-11&#39;: (($root.bodyPanel() != &#39;products&#39; || $root.bodyPanel() != &#39;customers&#39; || $root.bodyPanel() != &#39;shipping&#39;) || $root.contentModel.displayCart() == 0) }" style="width: 847.063px;">
+        <div class="row">
+            
+            
+                <!-- ko if: ($root.bodyPanel() == "products" || $root.bodyPanel() == "customers" || $root.bodyPanel() == "shipping") -->
+                
+
+<div class="col-sm-12" id="wkpos-content-panel" style="height: 618px;">
+    <div class="row wk-d-flex">
+        <div class=" category-div col-xs-12" id="wkpos-body-panel">
+            <div class="col-xs-12 upper-category">
+                <!-- ko if: $root.bodyPanel() == "products" -->
+                <ul class="wk-flex-10 lower-category">
+                    <li class="hidden-xs wkpos-category-list" data-bind="foreach: $root.contentModel.categories">
+                        <div class="wk-d-flex wk-pos-category-heading ">
+                            <div class="wk-cursor-pointer" data-bind="attr: { &#39;category-id&#39;: idCategory }, css: { &#39;active&#39;: $root.contentModel.selectedCategory() == idCategory }, text: categoryName, click: $root.contentModel.getCategoryWsProduct" category-id="3">Women</div>
+                            <!-- ko if: hasChildren == 1 -->
+                                <i class="fa fa-plus font-22 pull-right wk-p-17-8" data-bind="attr: { &#39;category-id&#39;: idCategory }, click: $root.contentModel.displaySubCategories" category-id="3"></i>
+                            <!-- /ko -->
+                        </div>
+                    </li>
+                    <!-- ko if: $root.contentModel.remainingCategories().length > 0 --><!-- /ko -->
+                </ul>
+                <div class="wk-flex-2">
+                    <i class="categoryProduct wkcategory fa fa-sort-alpha-asc" data-bind="click: $root.contentModel.sortProductByAsc, css: { &#39;active&#39;: $root.contentModel.selectedSortType() == &#39;asc&#39; }" aria-hidden="true"></i>
+                    <i class="categoryProduct wkcategory fa fa-sort-alpha-desc active" data-bind="click: $root.contentModel.sortProductByDesc, css: { &#39;active&#39;: $root.contentModel.selectedSortType() == &#39;desc&#39; }" aria-hidden="true"></i>
+                </div>
+                <!-- /ko -->
+                <!-- ko if: $root.bodyPanel() == "customers" --><!-- /ko -->
+                                
+            </div>
+            <div class="col-xs-12 text-center wkpos-body" style="height: 569px;">
+                <div class=" row">
+                    <!-- ko if: $root.bodyPanel() == "products" -->
+                        <!-- ko if: $root.contentModel.products().length == 0 --><!-- /ko -->
+                        <div class="col-xs-12 wkpos-scrollbar" id="wk-product-panel">
+                            <div class="wk-products clearfix" data-bind="foreach: $root.contentModel.products">
+                                <div class="col-md-3 col-sm-6 col-xs-6 product-select" product-id="3" options="true" data-bind="attr: { &#39;product-id&#39;: idProduct, &#39;options&#39;: hasCombination }, click: $root.contentModel.addProductToCart">
+                                    <div class="clearfix">
+                                                                                    <img src="./Point of Sale_files/printed-dress.jpg" class="img-responsive" data-id-product="" data-bind="attr: { src: imagePath, alt: name }" alt="Printed Dress">
+                                                                                <div class="col-xs-12 product-detail">
+                                            <span data-bind="text: displayName">Printed Dress</span><br>
+                                                                                        <b data-bind="attr: { &#39;product-price&#39;: price }, text: displayPrice" product-price="25.99">$25.99</b>
+                                                                                                                                </div>
+                                    </div>
+                                    <!-- ko if: hasCombination && 1 -->
+                                    <span class="label label-info combination-noti" data-toggle="tooltip" title="This product contain combinations">
+                                        <i class="fa fa-clone "></i>
+                                    </span>
+                                    <!-- /ko -->
+                                                                        <!-- ko if: quantity() <= 1 --><!-- /ko -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                            <div class="modal fade" id="wk-pos-product-combination" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                                                                <div class="modal-body">
+                                            <button type="button" class="close modal-close-padding" data-dismiss="modal">×</button>
+                                            <div class="row wk-d-flex">
+                                                <!-- ko if: $root.contentModel.selectedCombinationImage() == '' --><!-- /ko -->
+                                                <!-- ko ifnot: $root.contentModel.selectedCombinationImage() == '' -->
+                                                    <div data-bind="foreach: $root.contentModel.productCombination" class="clearfix col-md-5 col-sm-8"></div>
+                                                <!-- /ko -->
+                                                <!-- ko ifnot: $root.contentModel.selectedCombinationImage() == '' -->
+                                                    <div class="col-md-3 col-sm-4" dta-bind="if: $root.contentModel.selectedCombinationImage">
+                                                        <img src="./Point of Sale_files/printed-dress.jpg" class="img-responsive" data-bind="attr: { src: $root.contentModel.selectedCombinationImage }">
+                                                    </div>
+                                                <!-- /ko -->
+                                                <div class="col-md-4 col-sm-4 combination-price-block">
+                                                    <div class="row">
+                                                        <div>
+                                                            Quantity
+                                                        </div>
+                                                        <div class="col-md-4 wk-padding-0 margin-top-15">
+                                                            <input type="text" class="form-control col-md-5" data-bind="value: $root.contentModel.combinationQuantity">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6  padding-0">
+                                                            <span class="clearfix">
+                                                                <button type="button" class="form-control pull-left product-cart-item-update" title="Decrease Quantity" data-bind="click: $root.contentModel.decreaseCombinationQuantity">
+                                                                    <i class="fa fa-minus"></i>
+                                                                </button>
+                                                                <button type="button" class="form-control pull-left product-cart-item-update" title="Increase Quantity" data-bind="click: $root.contentModel.increaseCombinationQuantity">
+                                                                    <i class="fa fa-plus"></i>
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row margin-top-15">
+                                                        <div>
+                                                            Price
+                                                        </div>
+                                                        <div class="wk-padding-0 margin-top-15">
+                                                            <span data-bind="text: $root.contentModel.combinationPrice" class="combination-price">$25.99</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" data-bind="click: $root.contentModel.addCombinationToCart" class="btn wkpos-btn" name="addToCart" id="">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                            <!-- ko if: ($root.contentModel.displaySubCategoriesFlag() === 1) -->
+                                <div class="modal fade" id="wk-pos-category" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Category</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- ko if: $root.contentModel.showExpand --><!-- /ko -->
+                        <!-- ko ifnot: $root.contentModel.showExpand -->
+                            <button type="button" class="btn wkpos-btn pull-right" data-bind="click: $root.contentModel.collapseAllCategory">
+                                <i class="fa fa-minus-square"></i>
+                                Collapse All
+                            </button>
+                        <!-- /ko -->
+                    </div>
+                </div>
+                <div class="row wk-d-flex">
+                    <script id="categoryTemplate" type="text/html">
+                        <ul>
+                            <li>
+                                <!-- ko if: hasChildren -->
+                                    <label data-bind="attr: { 'for': idCategory }">
+                                        <!-- ko if: categoryOpen -->
+                                                                                        <i class="fa fa-folder-open"></i>
+                                        <!-- /ko -->
+                                        <!-- ko ifnot: categoryOpen -->
+                                            <i class="fa fa-folder"></i>
+                                                                                    <!-- /ko -->
+                                    </label>
+                                <!-- /ko -->
+                                <!-- ko ifnot: hasChildren -->
+                                    <i class="fa fa-circle"></i>
+                                <!-- /ko -->
+                                <!-- ko if: hasChildren -->
+                                    <input type="checkbox" value="cherry" class="catgory-input" data-bind="checked: categoryOpen, attr: { 'id': idCategory, 'name': idCategory }">
+                                    </input>
+                                <!-- /ko -->
+                                <span data-bind="text: name, click: $root.contentModel.getCategoryWsProduct, attr: { 'category-id': idCategory }, css: { 'active': $root.contentModel.selectedCategory() == idCategory }" class="wkcategory categoryProduct"></span>
+                                <!-- ko if: categoryOpen -->
+                                    <!-- ko template: { name: 'categoryTemplate', foreach: children } -->
+                                    <!-- /ko -->
+                                <!-- /ko -->
+                            </li>
+                        </ul>
+                    </script>
+                    <div data-bind="template: { name: &#39;categoryTemplate&#39;, data: $root.contentModel.subCategories }">
+                        <ul>
+                            <li>
+                                <!-- ko if: hasChildren -->
+                                    <label data-bind="attr: { &#39;for&#39;: idCategory }" for="3">
+                                        <!-- ko if: categoryOpen -->
+                                                                                        <i class="fa fa-folder-open"></i>
+                                        <!-- /ko -->
+                                        <!-- ko ifnot: categoryOpen --><!-- /ko -->
+                                    </label>
+                                <!-- /ko -->
+                                <!-- ko ifnot: hasChildren --><!-- /ko -->
+                                <!-- ko if: hasChildren -->
+                                    <input type="checkbox" value="cherry" class="catgory-input" data-bind="checked: categoryOpen, attr: { &#39;id&#39;: idCategory, &#39;name&#39;: idCategory }" id="3" name="3">
+                                    
+                                <!-- /ko -->
+                                <span data-bind="text: name, click: $root.contentModel.getCategoryWsProduct, attr: { &#39;category-id&#39;: idCategory }, css: { &#39;active&#39;: $root.contentModel.selectedCategory() == idCategory }" class="wkcategory categoryProduct" category-id="3">Women</span>
+                                <!-- ko if: categoryOpen -->
+                                    <!-- ko template: { name: 'categoryTemplate', foreach: children } -->
+                        <ul>
+                            <li>
+                                <!-- ko if: hasChildren -->
+                                    <label data-bind="attr: { &#39;for&#39;: idCategory }" for="4">
+                                        <!-- ko if: categoryOpen -->
+                                                                                        <i class="fa fa-folder-open"></i>
+                                        <!-- /ko -->
+                                        <!-- ko ifnot: categoryOpen --><!-- /ko -->
+                                    </label>
+                                <!-- /ko -->
+                                <!-- ko ifnot: hasChildren --><!-- /ko -->
+                                <!-- ko if: hasChildren -->
+                                    <input type="checkbox" value="cherry" class="catgory-input" data-bind="checked: categoryOpen, attr: { &#39;id&#39;: idCategory, &#39;name&#39;: idCategory }" id="4" name="4">
+                                    
+                                <!-- /ko -->
+                                <span data-bind="text: name, click: $root.contentModel.getCategoryWsProduct, attr: { &#39;category-id&#39;: idCategory }, css: { &#39;active&#39;: $root.contentModel.selectedCategory() == idCategory }" class="wkcategory categoryProduct" category-id="4">Tops</span>
+                                <!-- ko if: categoryOpen -->
+                                    <!-- ko template: { name: 'categoryTemplate', foreach: children } -->
+                        <ul>
+                            <li>
+                                <!-- ko if: hasChildren --><!-- /ko -->
+                                <!-- ko ifnot: hasChildren -->
+                                    <i class="fa fa-circle"></i>
+                                <!-- /ko -->
+                                <!-- ko if: hasChildren --><!-- /ko -->
+                                <span data-bind="text: name, click: $root.contentModel.getCategoryWsProduct, attr: { &#39;category-id&#39;: idCategory }, css: { &#39;active&#39;: $root.contentModel.selectedCategory() == idCategory }" class="wkcategory categoryProduct" category-id="5">T-shirts</span>
+                                <!-- ko if: categoryOpen -->
+                                    <!-- ko template: { name: 'categoryTemplate', foreach: children } --><!-- /ko -->
+                                <!-- /ko -->
+                            </li>
+                        </ul>
+                    
+                        <ul>
+                            <li>
+                                <!-- ko if: hasChildren --><!-- /ko -->
+                                <!-- ko ifnot: hasChildren -->
+                                    <i class="fa fa-circle"></i>
+                                <!-- /ko -->
+                                <!-- ko if: hasChildren --><!-- /ko -->
+                                <span data-bind="text: name, click: $root.contentModel.getCategoryWsProduct, attr: { &#39;category-id&#39;: idCategory }, css: { &#39;active&#39;: $root.contentModel.selectedCategory() == idCategory }" class="wkcategory categoryProduct" category-id="6">Tops</span>
+                                <!-- ko if: categoryOpen -->
+                                    <!-- ko template: { name: 'categoryTemplate', foreach: children } --><!-- /ko -->
+                                <!-- /ko -->
+                            </li>
+                        </ul>
+                    
+                        <ul>
+                            <li>
+                                <!-- ko if: hasChildren --><!-- /ko -->
+                                <!-- ko ifnot: hasChildren -->
+                                    <i class="fa fa-circle"></i>
+                                <!-- /ko -->
+                                <!-- ko if: hasChildren --><!-- /ko -->
+                                <span data-bind="text: name, click: $root.contentModel.getCategoryWsProduct, attr: { &#39;category-id&#39;: idCategory }, css: { &#39;active&#39;: $root.contentModel.selectedCategory() == idCategory }" class="wkcategory categoryProduct" category-id="7">Blouses</span>
+                                <!-- ko if: categoryOpen -->
+                                    <!-- ko template: { name: 'categoryTemplate', foreach: children } --><!-- /ko -->
+                                <!-- /ko -->
+                            </li>
+                        </ul>
+                    <!-- /ko -->
+                                <!-- /ko -->
+                            </li>
+                        </ul>
+                    
+                        <ul>
+                            <li>
+                                <!-- ko if: hasChildren -->
+                                    <label data-bind="attr: { &#39;for&#39;: idCategory }" for="8">
+                                        <!-- ko if: categoryOpen -->
+                                                                                        <i class="fa fa-folder-open"></i>
+                                        <!-- /ko -->
+                                        <!-- ko ifnot: categoryOpen --><!-- /ko -->
+                                    </label>
+                                <!-- /ko -->
+                                <!-- ko ifnot: hasChildren --><!-- /ko -->
+                                <!-- ko if: hasChildren -->
+                                    <input type="checkbox" value="cherry" class="catgory-input" data-bind="checked: categoryOpen, attr: { &#39;id&#39;: idCategory, &#39;name&#39;: idCategory }" id="8" name="8">
+                                    
+                                <!-- /ko -->
+                                <span data-bind="text: name, click: $root.contentModel.getCategoryWsProduct, attr: { &#39;category-id&#39;: idCategory }, css: { &#39;active&#39;: $root.contentModel.selectedCategory() == idCategory }" class="wkcategory categoryProduct" category-id="8">Dresses</span>
+                                <!-- ko if: categoryOpen -->
+                                    <!-- ko template: { name: 'categoryTemplate', foreach: children } -->
+                        <ul>
+                            <li>
+                                <!-- ko if: hasChildren --><!-- /ko -->
+                                <!-- ko ifnot: hasChildren -->
+                                    <i class="fa fa-circle"></i>
+                                <!-- /ko -->
+                                <!-- ko if: hasChildren --><!-- /ko -->
+                                <span data-bind="text: name, click: $root.contentModel.getCategoryWsProduct, attr: { &#39;category-id&#39;: idCategory }, css: { &#39;active&#39;: $root.contentModel.selectedCategory() == idCategory }" class="wkcategory categoryProduct active" category-id="9">Casual Dresses</span>
+                                <!-- ko if: categoryOpen -->
+                                    <!-- ko template: { name: 'categoryTemplate', foreach: children } --><!-- /ko -->
+                                <!-- /ko -->
+                            </li>
+                        </ul>
+                    
+                        <ul>
+                            <li>
+                                <!-- ko if: hasChildren --><!-- /ko -->
+                                <!-- ko ifnot: hasChildren -->
+                                    <i class="fa fa-circle"></i>
+                                <!-- /ko -->
+                                <!-- ko if: hasChildren --><!-- /ko -->
+                                <span data-bind="text: name, click: $root.contentModel.getCategoryWsProduct, attr: { &#39;category-id&#39;: idCategory }, css: { &#39;active&#39;: $root.contentModel.selectedCategory() == idCategory }" class="wkcategory categoryProduct" category-id="10">Evening Dresses</span>
+                                <!-- ko if: categoryOpen -->
+                                    <!-- ko template: { name: 'categoryTemplate', foreach: children } --><!-- /ko -->
+                                <!-- /ko -->
+                            </li>
+                        </ul>
+                    
+                        <ul>
+                            <li>
+                                <!-- ko if: hasChildren --><!-- /ko -->
+                                <!-- ko ifnot: hasChildren -->
+                                    <i class="fa fa-circle"></i>
+                                <!-- /ko -->
+                                <!-- ko if: hasChildren --><!-- /ko -->
+                                <span data-bind="text: name, click: $root.contentModel.getCategoryWsProduct, attr: { &#39;category-id&#39;: idCategory }, css: { &#39;active&#39;: $root.contentModel.selectedCategory() == idCategory }" class="wkcategory categoryProduct" category-id="11">Summer Dresses</span>
+                                <!-- ko if: categoryOpen -->
+                                    <!-- ko template: { name: 'categoryTemplate', foreach: children } --><!-- /ko -->
+                                <!-- /ko -->
+                            </li>
+                        </ul>
+                    <!-- /ko -->
+                                <!-- /ko -->
+                            </li>
+                        </ul>
+                    <!-- /ko -->
+                                <!-- /ko -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>                            <!-- /ko -->
+                        
+                    <!-- /ko -->
+                    <!-- ko if: $root.bodyPanel() == "customers" --><!-- /ko -->
+                                        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>                <!-- /ko -->
+                <!-- ko if: ($root.bodyPanel() === "orders") --><!-- /ko -->
+                <!-- ko if: ($root.bodyPanel() === "settings") --><!-- /ko -->
+                <!-- ko if: ($root.bodyPanel() === "pay") --><!-- /ko -->
+                <!-- ko if: ($root.bodyPanel() === "customer") --><!-- /ko -->
+
+                
+            
+            
+        </div>
+    <div class="ui-resizable-handle ui-resizable-e" style="z-index: 1000;"></div></div>
+
+
+                
+    <!-- ko if: ($root.bodyPanel() == "products" || $root.bodyPanel() == "customers" || $root.bodyPanel() == "shipping") -->
+        <div id="right_column" class="col-xs-5 hidden-xs" style="height: 618px; width: 617.573px;">
+            <!-- ko if: $root.rightColumnPage() == "pos_cart" -->
+                <!-- ko if: $root.contentModel.displayCart() == 1 -->
+                    <div class="row">
+                        <div id="wk-cart-panel" class="col-xs-12 hidden-xs">
+                            <div class="wk-cart-product-details">
+    <!-- Nav tabs -->
+    <!-- ko if: $root.bodyPanel() != 'shipping' -->
+    <ul class="nav nav-tabs wkpos-scrollbar" role="tablist">
+        <!-- ko foreach: $root.contentModel.posCarts -->
+        <li role="presentation" data-bind="css: { active: $index() == $root.contentModel.currentCartId() }, click: $root.contentModel.switchCart">
+            <a href="https://prestashopdemo.webkul.com:8098/en/module/wkpos/sale#home" role="tab" data-toggle="tab" data-bind="text: posCartId">1</a>
+        </li>
+        <!-- /ko -->
+        <li class="wk-cart-update-btn"><button class="btn wkpos-btn" data-bind="click: $root.contentModel.removeSelectedCart"><i class="fa fa-minus"></i></button></li>
+        <li class="wk-cart-update-btn"><button class="btn wkpos-btn" data-bind="click: $root.contentModel.createNewCart"><i class="fa fa-plus"></i></button></li>
+    </ul>
+    <!-- /ko -->
+    <div class="tab-content wkpos-scrollbar" id="wkpos-cart-panel" style="height: 286px;">
+        <div role="tabpanel" class="tab-pane active" id="home">
+            <!-- ko if: $root.contentModel.productCart().length > 0 && $root.bodyPanel() == 'shipping' --><!-- /ko -->
+            <ul data-bind="foreach: $root.contentModel.productCart">
+                <li class="orderline cart-product-selected" data-bind="attr: { &#39;id-product&#39;: idProduct }, css: { &#39;cart-product-selected&#39; : uniqueKey == $root.contentModel.selectedCartProduct() }, click: $root.contentModel.selectCartItems" id-product="8">
+                    <div class="row">
+                        <div class="col-sm-9 padding-right-0">
+                            <img class="img-responsive col-sm-3 cart-product-img" data-bind="attr: { src: image }" src="./Point of Sale_files/men-blue-t-shirt.jpg">
+                            <div class="col-sm-5 padding-0">
+                                <span class="product-name" data-bind="text: productName">Men White T-shirt</span>
+                                <div class="info-list">
+                                    <div class="info">
+                                        <em data-bind="text: productAttributes, attr: { &#39;data-id-product-combination&#39;: idProductAttribute }" data-id-product-combination=""></em>
+                                    </div>
+                                    <div class="info clearfix">
+                                        <em data-bind="text: productQuantity">1</em>
+                                        Unit(s) at  <span data-bind="text: price()">$100.00</span> / Unit(s)
+
+                                    </div>
+                                    <div class="info" data-bind="if: productDiscount() &gt; 0"></div>
+                                </div>
+                            </div>
+                                                        <div class="col-sm-4 wk-flex-column">
+                                <!-- ko if: $root.bodyPanel() != 'shipping' -->
+                                    <div class="row pull-right">
+                                        <span class="price " data-bind="text: displayPrice()">$100.00</span>
+                                        <span class=""> (tax incl.)</span>
+                                    </div>
+                                <!-- /ko -->
+                                <div class="row pull-right">
+                                    <span class="price " data-bind="text: displayTaxExcludedPrice()">$100.00</span>
+                                    <span class=""> (tax excl.)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ko if: $root.bodyPanel() == 'shipping' --><!-- /ko -->
+                        <!-- ko if: $root.contentModel.productCart().length > 0 && $root.bodyPanel() != 'shipping' -->
+                            <div class="col-sm-3">
+                                <div>
+                                    <input type="text" class="form-control text-center wkpos-product-qty" data-bind=" value: productQuantity, event: { blur: updateQuantity }, executeOnEnter: updateQuantity, attr: { &#39;disabled&#39;: $root.bodyPanel() == &#39;shipping&#39; }">
+                                    <button type="button" class="form-control pull-right product-cart-item-update" title="Remove Product" data-bind="click: $root.contentModel.removeProduct, attr: { &#39;disabled&#39;: $root.bodyPanel() == &#39;shipping&#39; }">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </div>
+                                <div>
+                                    <span class="clearfix">
+                                        <button type="button" class="form-control pull-left product-cart-item-update" title="Decrease Quantity" data-bind="click: $root.contentModel.decreaseProductQuantity, attr: { &#39;disabled&#39;: $root.bodyPanel() == &#39;shipping&#39; }">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                        <button type="button" class="form-control pull-left product-cart-item-update" title="Increase Quantity" data-bind="click: $root.contentModel.increaseProductQuantity, attr: { &#39;disabled&#39;: $root.bodyPanel() == &#39;shipping&#39; }">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        <!-- /ko -->
+                    </div>
+                </li>
+            
+                <li class="orderline" data-bind="attr: { &#39;id-product&#39;: idProduct }, css: { &#39;cart-product-selected&#39; : uniqueKey == $root.contentModel.selectedCartProduct() }, click: $root.contentModel.selectCartItems" id-product="3">
+                    <div class="row">
+                        <div class="col-sm-9 padding-right-0">
+                            <img class="img-responsive col-sm-3 cart-product-img" data-bind="attr: { src: image }" src="./Point of Sale_files/printed-dress.jpg">
+                            <div class="col-sm-5 padding-0">
+                                <span class="product-name" data-bind="text: productName">Printed Dress</span>
+                                <div class="info-list">
+                                    <div class="info">
+                                        <em data-bind="text: productAttributes, attr: { &#39;data-id-product-combination&#39;: idProductAttribute }" data-id-product-combination="13">S - Orange</em>
+                                    </div>
+                                    <div class="info clearfix">
+                                        <em data-bind="text: productQuantity">0</em>
+                                        Unit(s) at  <span data-bind="text: price()">$25.99</span> / Unit(s)
+
+                                    </div>
+                                    <div class="info" data-bind="if: productDiscount() &gt; 0"></div>
+                                </div>
+                            </div>
+                                                        <div class="col-sm-4 wk-flex-column">
+                                <!-- ko if: $root.bodyPanel() != 'shipping' -->
+                                    <div class="row pull-right">
+                                        <span class="price " data-bind="text: displayPrice()">$0.00</span>
+                                        <span class=""> (tax incl.)</span>
+                                    </div>
+                                <!-- /ko -->
+                                <div class="row pull-right">
+                                    <span class="price " data-bind="text: displayTaxExcludedPrice()">$25.99</span>
+                                    <span class=""> (tax excl.)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ko if: $root.bodyPanel() == 'shipping' --><!-- /ko -->
+                        <!-- ko if: $root.contentModel.productCart().length > 0 && $root.bodyPanel() != 'shipping' -->
+                            <div class="col-sm-3">
+                                <div>
+                                    <input type="text" class="form-control text-center wkpos-product-qty" data-bind=" value: productQuantity, event: { blur: updateQuantity }, executeOnEnter: updateQuantity, attr: { &#39;disabled&#39;: $root.bodyPanel() == &#39;shipping&#39; }">
+                                    <button type="button" class="form-control pull-right product-cart-item-update" title="Remove Product" data-bind="click: $root.contentModel.removeProduct, attr: { &#39;disabled&#39;: $root.bodyPanel() == &#39;shipping&#39; }">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </div>
+                                <div>
+                                    <span class="clearfix">
+                                        <button type="button" class="form-control pull-left product-cart-item-update" title="Decrease Quantity" data-bind="click: $root.contentModel.decreaseProductQuantity, attr: { &#39;disabled&#39;: $root.bodyPanel() == &#39;shipping&#39; }">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                        <button type="button" class="form-control pull-left product-cart-item-update" title="Increase Quantity" data-bind="click: $root.contentModel.increaseProductQuantity, attr: { &#39;disabled&#39;: $root.bodyPanel() == &#39;shipping&#39; }">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        <!-- /ko -->
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="wk-payment collapsed">
+    <div class="row">
+        <div class="col-sm-12">
+            <!-- ko if: $root.bodyPanel() != "shipping" -->
+            <div class="col-xs-12 col-sm-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul id="wk-pos-keypad" class="col-md-12">
+                            <update-cart-details params="buttonText: &quot;Qty&quot;, buttonValue: &quot;qty&quot;, $root.contentModel.productCart: $root.contentModel.productCart"><li class="letter col-xs-3 cart-product-selected" data-bind="attr: { value: buttonValue }, text: buttonText, click: $root.contentModel.updateProduct, css: {&#39;cart-product-selected&#39;: $root.contentModel.updateAction() == activeClass }" value="qty">Qty</li></update-cart-details>
+                            <update-cart-details params="buttonText: &quot;1&quot;, $root.contentModel.productCart: $root.contentModel.productCart"><li class="letter col-xs-3" data-bind="attr: { value: buttonValue }, text: buttonText, click: $root.contentModel.updateProduct, css: {&#39;cart-product-selected&#39;: $root.contentModel.updateAction() == activeClass }" value="1">1</li></update-cart-details>
+                            <update-cart-details params="buttonText: &quot;2&quot;, $root.contentModel.productCart: $root.contentModel.productCart"><li class="letter col-xs-3" data-bind="attr: { value: buttonValue }, text: buttonText, click: $root.contentModel.updateProduct, css: {&#39;cart-product-selected&#39;: $root.contentModel.updateAction() == activeClass }" value="2">2</li></update-cart-details>
+                            <update-cart-details params="buttonText: &quot;3&quot;, $root.contentModel.productCart: $root.contentModel.productCart"><li class="letter col-xs-3" data-bind="attr: { value: buttonValue }, text: buttonText, click: $root.contentModel.updateProduct, css: {&#39;cart-product-selected&#39;: $root.contentModel.updateAction() == activeClass }" value="3">3</li></update-cart-details>
+                            <update-cart-details params="buttonText: &quot;Price&quot;, buttonValue: &quot;price&quot;, $root.contentModel.productCart: $root.contentModel.productCart"><li class="letter col-xs-3" data-bind="attr: { value: buttonValue }, text: buttonText, click: $root.contentModel.updateProduct, css: {&#39;cart-product-selected&#39;: $root.contentModel.updateAction() == activeClass }" value="price">Price</li></update-cart-details>
+                            <update-cart-details params="buttonText: &quot;4&quot;, $root.contentModel.productCart: $root.contentModel.productCart"><li class="letter col-xs-3" data-bind="attr: { value: buttonValue }, text: buttonText, click: $root.contentModel.updateProduct, css: {&#39;cart-product-selected&#39;: $root.contentModel.updateAction() == activeClass }" value="4">4</li></update-cart-details>
+                            <update-cart-details params="buttonText: &quot;5&quot;, $root.contentModel.productCart: $root.contentModel.productCart"><li class="letter col-xs-3" data-bind="attr: { value: buttonValue }, text: buttonText, click: $root.contentModel.updateProduct, css: {&#39;cart-product-selected&#39;: $root.contentModel.updateAction() == activeClass }" value="5">5</li></update-cart-details>
+                            <update-cart-details params="buttonText: &quot;6&quot;, $root.contentModel.productCart: $root.contentModel.productCart"><li class="letter col-xs-3" data-bind="attr: { value: buttonValue }, text: buttonText, click: $root.contentModel.updateProduct, css: {&#39;cart-product-selected&#39;: $root.contentModel.updateAction() == activeClass }" value="6">6</li></update-cart-details>
+                            <update-cart-details params="buttonText: &quot;Off&quot;, buttonValue: &quot;off&quot;, $root.contentModel.productCart: $root.contentModel.productCart"><li class="letter col-xs-3" data-bind="attr: { value: buttonValue }, text: buttonText, click: $root.contentModel.updateProduct, css: {&#39;cart-product-selected&#39;: $root.contentModel.updateAction() == activeClass }" value="off">Off</li></update-cart-details>
+                            <update-cart-details params="buttonText: &quot;7&quot;, $root.contentModel.productCart: $root.contentModel.productCart"><li class="letter col-xs-3" data-bind="attr: { value: buttonValue }, text: buttonText, click: $root.contentModel.updateProduct, css: {&#39;cart-product-selected&#39;: $root.contentModel.updateAction() == activeClass }" value="7">7</li></update-cart-details>
+                            <update-cart-details params="buttonText: &quot;8&quot;, $root.contentModel.productCart: $root.contentModel.productCart"><li class="letter col-xs-3" data-bind="attr: { value: buttonValue }, text: buttonText, click: $root.contentModel.updateProduct, css: {&#39;cart-product-selected&#39;: $root.contentModel.updateAction() == activeClass }" value="8">8</li></update-cart-details>
+                            <update-cart-details params="buttonText: &quot;9&quot;, $root.contentModel.productCart: $root.contentModel.productCart"><li class="letter col-xs-3" data-bind="attr: { value: buttonValue }, text: buttonText, click: $root.contentModel.updateProduct, css: {&#39;cart-product-selected&#39;: $root.contentModel.updateAction() == activeClass }" value="9">9</li></update-cart-details>
+                            <update-cart-details params="buttonText: &quot;Del&quot;, buttonValue: &quot;del&quot;, $root.contentModel.productCart: $root.contentModel.productCart"><li class="letter col-xs-3" data-bind="attr: { value: buttonValue }, text: buttonText, click: $root.contentModel.updateProduct, css: {&#39;cart-product-selected&#39;: $root.contentModel.updateAction() == activeClass }" value="del">Del</li></update-cart-details>
+                            <update-cart-details params="buttonText: &quot;+/-&quot;, buttonValue: &quot;toggle&quot;, $root.contentModel.productCart: $root.contentModel.productCart"><li class="letter col-xs-3" data-bind="attr: { value: buttonValue }, text: buttonText, click: $root.contentModel.updateProduct, css: {&#39;cart-product-selected&#39;: $root.contentModel.updateAction() == activeClass }" value="toggle">+/-</li></update-cart-details>
+                            <update-cart-details params="buttonText: &quot;0&quot;, $root.contentModel.productCart: $root.contentModel.productCart"><li class="letter col-xs-3" data-bind="attr: { value: buttonValue }, text: buttonText, click: $root.contentModel.updateProduct, css: {&#39;cart-product-selected&#39;: $root.contentModel.updateAction() == activeClass }" value="0">0</li></update-cart-details>
+                            <update-cart-details params="buttonText: &quot;.&quot;, $root.contentModel.productCart: $root.contentModel.productCart"><li class="letter col-xs-3" data-bind="attr: { value: buttonValue }, text: buttonText, click: $root.contentModel.updateProduct, css: {&#39;cart-product-selected&#39;: $root.contentModel.updateAction() == activeClass }" value=".">.</li></update-cart-details>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <!-- /ko -->
+            <!-- ko if: $root.bodyPanel() != "shipping" -->
+            <div class="col-xs-12 col-sm-6 wk-padding-0">
+                <div class="clearfix wk-d-flex wk-flex-property">
+    <span class="wk-total">
+        <span>Sub Total($)</span>
+    </span>
+    <div class="wk-total-detail padding-12 text-right pull-right wk-margin-right-12">
+        <span data-bind="text: $root.contentModel.subTotal">100.00</span>
+    </div>
+</div>
+<div class="clearfix wk-d-flex wk-flex-property">
+    <span class="wk-total">
+        <span>Discount($)</span>
+    </span>
+    <div class="wk-total-detail pull-right padding-12">
+        <input type="text" data-bind="value: $root.contentModel.orderDiscount, valueUpdate: [&#39;afterkeydown&#39;, &#39;input&#39;], attr: { &#39;disabled&#39;: $root.bodyPanel() == &#39;shipping&#39; }" class="form-control text-right order_discount">
+    </div>
+</div>
+<div class="clearfix wk-d-flex wk-flex-property">
+    <span class="wk-total">
+        <span>Tax($)</span>
+    </span>
+    <div class="wk-total-detail pull-right padding-12 wk-margin-right-12">
+        <span data-bind="text: $root.contentModel.totalTax" class="text-right">0.00</span>
+    </div>
+</div>
+<div class="clearfix wk-d-flex wk-flex-property">
+    <span class="wk-total">
+        <span>Total($)</span>
+    </span>
+    <div class="margin-top-15 price wkpos-text-color pull-right padding-12 wk-margin-right-12">
+        <span data-bind="text: $root.contentModel.total()">100.00</span>
+    </div>
+</div>
+            </div>
+            <!-- /ko -->
+            <!-- ko if: $root.bodyPanel() == "shipping" --><!-- /ko -->
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-6">
+                <div class="btn wk-checkout-btn wkpos-background-color" data-bind="click: $root.contentModel.updateCustomer">
+                    <i class="fa fa-user-circle"></i>
+                    <span data-bind="text: $root.contentModel.selectedCustomerName">Customer</span>
+                </div>
+            </div>
+            <div class="col-sm-6 wk-padding-0 wk-padding-right-12">
+                <a class="btn wk-checkout-btn wk-pay-btn" data-bind="click: $root.contentModel.proceedToPay, css: { &#39;disabled&#39;: $root.contentModel.productCart().length == 0 }">
+                    <span>Proceed to checkout</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>                        </div>
+                    </div>
+                    
+                <!-- /ko -->
+            <!-- /ko -->
+            
+        </div>
+    <!-- /ko -->
+
+              
+            </div>
+          </div>
+          
+              </section>
+
+      <footer id="footer">
+        
+        
+      </footer>
+
+    </main>
+
+        
+      <div id="wkpos_full_screen">
+        <div id="wkpos_full_screen_img" draggable="true" title="Enter Full Screen">
+            <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+        </div>
+      </div>
+    
+
+    
+      
+    
+  
+
+<div class="posProductBlock" style="position: fixed; z-index: 998;"><img src="./Point of Sale_files/faded-short-sleeves-tshirt.jpg" width="50" height="50"></div><div id="growls" class="default"></div><div class="posProductBlock" style="position: fixed; z-index: 998;"><img src="./Point of Sale_files/men-blue-t-shirt.jpg" width="50" height="50"></div><div class="posProductBlock" style="position: fixed; z-index: 998;"><img src="./Point of Sale_files/printed-dress.jpg" width="50" height="50"></div></body></html>
